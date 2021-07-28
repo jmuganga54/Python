@@ -1,0 +1,136 @@
+/**
+*LIST
+*To tame complexity, you can often arrange your data
+as a [list],: there's the list of customers, your 
+friends, the shopping list, and your to-do list (to 
+name a few).Arranging data in lists is so common that
+Pythong makes it eassy for you to create and process
+[lists] in code
+
+*Create simple Python lists
+.moves = ["The Holy Grails", "The Life of Brian", "The Meaning of Life"]
+
+*Many other programming languages insist that every
+identifier used in code has type information declared for it.Not so with Python: identifiers are simply names that refers to a data objects of [some type]
+
+*LISTS ARE LIKE ARRAYS
+*When you create a list in Python, the interpreter
+creates an array-like data structure in memory to hold your data, with your data items stacked from the bottom up. Like array technology in other programming languages, the first slot in the stack is [numbered 0], the second is numbered 1, the thirds is numbered 2, and so on.
+
+*Access list data using the square bracket notation
+*As with arrays, you can access the data item in a list slot using the standard square bracket offset notation.
+.print(movies[1])
+
+*LIST BUILT IN FUNCTIONS
+.len() - to work out how many data items are in the list
+.append() - add a single data item to the end of your list
+.pop() - removing data from the end of your list
+.extend() -add a collection of data items to the end of your list
+.remove() - remove a specific item from the list
+.insert() - add a data item before specific slot location [insert(0, "Joseph")]
+
+*Note method are invoked using [.dot notation]
+
+*Python lists can contain items of [mixed type].It's perfectly Ok to mix string with numbers withing hte same Python list.You can store data of [any type] in a single list, if you like.
+
+*LOOPING THE LIST (ITERATE)
+*For loops work with lists of any size
+*Python[for loop] exists to process lists and other iterations.
+*Lists are the most common iterated data structure in Python, and when you need to iterate list, it's best to use [for]
+
+*Syntax
+for(The keyword indicates the start of loop) [target identifer] in list:
+    list processing code
+
+*[TARGET IDENTIFER] is like any other name in your code.As your list is iterated over, the target identifier is assigned each of the data values in your list, in turn.This means that each time the loop code executes, the target identifier refers to a different data value.The loop keeps iterating until it exhausts all of your list's data, no matter how big or small your list is.
+
+*An alternative to [for] is to code the iteration with a [while] loop.
+
+[
+    count = 0
+    while count < lens(movies):
+        print(movies[count])
+        count = count +1
+]
+
+*STORE LISTS WITH THE LISTS
+*As you've seen, lists can hold ata of mixed type.But it gets even better than that:lists can hold collection of anything, including other lists.Simple [embed] the inner list with the enclosing list as needed
+
+*All you need to remember is that every list is a collection of items separated from each other with commas and surrounded with square brackets.And, of course, any list item can itself be another list.
+
+*Example
+[
+    movies = [
+        "The Holy Grail",1975, "Terry Jones & Gerry Gillimam, 81,
+        ["Graham Chapman",
+        ["Michael Palin, "John Cleese", Terry Gilliam","Eric Idle", "Terry Jones"]
+            ]
+                ]
+]
+
+*In fact, it's possible to nest lists within lists to most any level with Python
+*And you can [manipulate] every list with its own list methods and access it with the square bracket notation
+
+*Example
+.print(movies[4][1][3]) //A list within a list within a list [Eric Idle]
+
+*LOOPING A LIST WITHIN A LIST
+*Creating a list that contain list is straighforward.But what happens when you try to proceess a list that contains another list(or lists) using [for] loop from earrlier in this chapter?
+
+[
+#looping a list within a list
+for each_item in movies:
+   print(each_item)
+]
+
+*The above code is working, but there must be proper way to specific exactly values you want.
+
+*CHECK A LIST FOR A LIST
+*Each time you process an item in your list, you need to check to see if the item is another  list.If the item is a list, you need to process the [nested list] before processing the next item in your outer list.Deciding what to do when in Python follows the familiar [if .. else ]pattern
+
+Syntax
+[
+    if [some condition holds]:
+        [the "true" suite] //This code executes if the condition holds(i.e. it's TRUE)
+    else:
+        [the 'false" suite]//This code executes if the condition does NOT hold(i.e, its FALSE)
+]
+
+*BIF to check if is a list
+.isinstance() BIF that it lets you check if a specific identifier hold data of a [specific type:]
+
+Example
+[
+    names= ['Joseph','Peter']
+    isinstance(names, list) //Refer to a Python type [list]
+]
+
+*To see a list of built-in that comes with Python
+.print(dir(__builtins__))
+
+*To find out what any BIF does-like (input())
+.help(input)
+
+#COMPLEX DATA IS HARD TO PROCESS
+#CREATE A FUNCTION IN PYTHON
+*A function in Python is a named suite of code, which can also take an [optional list of argument if required]
+
+*You define a Python function using the [def] statement, providing a name for your function and specifying either an empty or populated argument list within parentheses.The standard form looks something like this.
+
+.def - The keyword "def" introduces the name of the funtion
+.[arguments(s)] - Arguments lists are optional, but the parentheses are NOT.
+.:-A colong(:) follows the closing parenthesis and indicates the start of your function code suite
+Syntax
+[
+    def [function name] ([argrument(s)]):
+        [function code suite] //The function code must be indented under the def statement
+]
+
+*What does your function need to do
+*Function needs to take a list and process item in it
+*In other words, the function need to [recur] that is,
+invoke itself within the function code suite
+
+
+
+
